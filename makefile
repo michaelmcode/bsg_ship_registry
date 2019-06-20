@@ -4,7 +4,7 @@ GOBUILD=$(GO) build
 GOCLEAN=$(GO) clean
 GOGET=$(GO) get
 
-EXENAME=main
+EXENAME=main.go
 
 export GOPATH=$(CURDIR)
 
