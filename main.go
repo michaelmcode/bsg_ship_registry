@@ -24,7 +24,7 @@ func main() {
 	router := gin.Default()
 	router.Use(static.Serve("/", static.LocalFile("./views", true)))
 
-	// Cors setup
+	// Cors setup, currently set to allow all
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"*"},
 		AllowMethods:     []string{"PUT", "PATCH", "GET", "HEAD", "POST"},
