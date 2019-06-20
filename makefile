@@ -33,6 +33,6 @@ clean:
 	@echo "cleanning"
 	@rm -rf $(BUILDPATH)/bin/$(EXENAME)
 	@rm -rf $(BUILDPATH)/pkg
-	@rm -rf $(BUILDPATH)/src/github.com
+	@rm -rf $(BUILDPATH)/src
 
 all: makedir get build
