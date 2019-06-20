@@ -17,6 +17,7 @@ makedir:
 	@if [ ! -d $(BUILDPATH)/pkg ] ; then mkdir -p $(BUILDPATH)/pkg ; fi
 
 get:
+	@echo "Downloading deps"
 	@$(GOGET) github.com/gin-contrib/cors
 	@$(GOGET) github.com/gin-gonic/contrib/static
 	@$(GOGET) github.com/gin-gonic/gin
