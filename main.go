@@ -33,7 +33,7 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 		AllowOriginFunc: func(origin string) bool {
-			return origin == "https://localhost.com"
+			return origin == "http://localhost.com"
 		},
 		MaxAge: 12 * time.Hour,
 	}))
