@@ -92,7 +92,7 @@ func GetName(c *gin.Context) {
 
 	id := c.Params.ByName("id")
 	var name Names
-	// SELECT * FROM users WHERE id = 1;
+	// SELECT * FROM names WHERE id = 1;
 	db.First(&name, id)
 
 	if name.Id != 0 {
@@ -102,8 +102,8 @@ func GetName(c *gin.Context) {
 		// Display JSON error
 		c.JSON(404, gin.H{"error": "Not found"})
 	}
-
 	// curl -i http://localhost:8080/api/names/1
+	// Change one to the ID you are wanting returned
 }
 
 func UpdateName(c *gin.Context) {
@@ -112,10 +112,10 @@ func UpdateName(c *gin.Context) {
 	// Close connection database
 	defer db.Close()
 
-	// Get id user
+	// Get id name
 	id := c.Params.ByName("id")
 	var name Names
-	// SELECT * FROM users WHERE id = Entry;
+	// SELECT * FROM names WHERE id = Entry;
 	db.First(&name, id)
 
 	if name.Projectname != "" && name.Universe != "" {
@@ -132,7 +132,7 @@ func UpdateName(c *gin.Context) {
 				Image:        newName.Image,
 			}
 
-			// UPDATE users SET projectname='newUser.Projectname', universe='newUser.Universe' WHERE id = user.Id;
+			// UPDATE names SET projectname='newName.Projectname', universe='newName.Universe' WHERE id = names.Id;
 			db.Save(&updates)
 			// Display modified data in JSON message "success"
 			c.JSON(200, gin.H{"success": updates})
