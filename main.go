@@ -132,7 +132,7 @@ func UpdateName(c *gin.Context) {
 				Image:        newName.Image,
 			}
 
-			// UPDATE users SET firstname='newUser.Firstname', lastname='newUser.Lastname' WHERE id = user.Id;
+			// UPDATE users SET projectname='newUser.Projectname', universe='newUser.Universe' WHERE id = user.Id;
 			db.Save(&updates)
 			// Display modified data in JSON message "success"
 			c.JSON(200, gin.H{"success": updates})
