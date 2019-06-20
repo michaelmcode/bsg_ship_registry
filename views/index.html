@@ -1,0 +1,54 @@
+<html>
+    <head>
+    </head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <title>Battle Star Galactica Ship Registry
+    </title>
+    <body><img src="Battlestar Galactica_TitleTreatment.jpg" height="75px">
+   <p style="font-size: 15px;">Ship Registry</p>
+      <table id="example" class="display" style="width:100%">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Universe</th>
+                  <th>Creation Date</th>
+                  <th>Image</th>
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Universe</th>
+                  <th>Creation Date</th>
+                  <th>Image</th>
+              </tr>
+          </tfoot>
+      </table>
+     
+    </body>
+<script>
+        $(document).ready(function () {
+        $('#example').DataTable({
+             "ajax": {
+             "dataType": 'json',
+             "contentType": "application/json; charset=utf-8",
+             "type": "GET",
+             "url":"api/names",
+             "dataSrc": '',
+             },
+
+            "columns": [
+                {"data": "id"},
+                {"data": "PROJECTNAME"},
+                {"data": "UNIVERSE"},
+                {"data": "CREATIONDATE"},
+                {"data": "IMAGE"},
+            ]
+        });
+    });
+    </script>
+    </html>
