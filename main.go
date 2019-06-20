@@ -66,7 +66,7 @@ func PostNames(c *gin.Context) {
 		c.JSON(422, gin.H{"error": "Fields are empty"})
 	}
 
-	// curl -i -X POST -H "Content-Type: application/json" -d "{ \"Projectname\": \"Adrasteia\", \"universe\": \"Battlestar Galactica\" }" http://localhost:8080/api/names
+	// curl -i -X POST -H "Content-Type: application/json" -d "{ \"Projectname\": \"Adrasteia\", \"universe\": \"Battlestar Galactica\" , \"Creationdate\": \"2019-06-19\", \"Image\": \"shipimage.jpg\" }" http://localhost:8080/api/names
 }
 
 func GetNames(c *gin.Context) {
